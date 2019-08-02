@@ -16,12 +16,12 @@
                 <nuxt-link to="/air">国内机票</nuxt-link>
             </el-row>    
                 <!-- 登录状态部分 未登录 -->
-                <div>
+                <div v-if="!$store.state.user.userInfo.token">
                     <nuxt-link to='/user/login'>登录注册</nuxt-link>
                 </div>
 
                 <!-- 登录后的布局 -->
-                <div>
+                <div v-else>
                     <el-dropdown>
                     <span class="el-dropdown-link">
                         <img src="http://157.122.54.189:9095/assets/images/avatar.jpg" alt="">
