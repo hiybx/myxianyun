@@ -15,8 +15,17 @@ export const mutations={
     // state参数是固定默认写法,data是调用该方法时传入的数据
     setUserInfo(state,data){
         state.userInfo=data
+    },
+    // 清除用户信息登录状态
+    clearUserInfo(state){
+        state.userInfo={
+            token:'',
+            user:{}
+        }
     }
 }
+
+
 
 // 异步修改数据
 export const actions={}

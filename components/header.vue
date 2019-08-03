@@ -29,7 +29,7 @@
                     </span>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item>个人中心</el-dropdown-item>
-                        <el-dropdown-item>退出</el-dropdown-item>
+                        <el-dropdown-item @click.native='clearLogin()'>退出</el-dropdown-item>
                     </el-dropdown-menu>
                     </el-dropdown>
                 </div>
@@ -42,6 +42,11 @@
 export default {
     mounted(){
         console.log(this.$store)
+    },
+    methods:{
+        clearLogin(){
+            this.$store.commit('user/clearUserInfo')
+        }
     }
 }
 </script>
