@@ -177,6 +177,15 @@ export default {
         path: "/air/flights",
         query: this.form
       });
+
+      // 设置本地数据存储
+      const arr=[...this.$store.state.air.myhistory]
+      arr.unshift(this.form)
+      if(arr.length>5){
+        arr.length=5
+      }
+      this.$store.commit('air/setHistory',arr)
+      // console.log(this.$store)
     }
   },
   mounted() {
